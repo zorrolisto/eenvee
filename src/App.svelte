@@ -3,30 +3,54 @@
   import Main from "./components/organisms/main/main.svelte";
   import projectsDefault from "./mockups/projects.mockups";
 
-  let projects = projectsDefault;
+  let projects =
+    JSON.parse(localStorage.getItem("projects")) || projectsDefault;
   let state = "SUCCESS";
-  let selectedProject = projects[0];
-  let selectedVariablesGroup = selectedProject.variablesGroup[0];
+  const idLastProj = JSON.parse(
+    localStorage.getItem("lastIdOfProjectSelected")
+  );
+  let selectedProject = idLastProj
+    ? projects.find((p) => p.id === idLastProj)
+    : projects[0];
+  const idLastVarGroup = JSON.parse(
+    localStorage.getItem("lastIdOfVariableGroupSelected")
+  );
+  let selectedVariablesGroup = idLastVarGroup
+    ? selectedProject.variablesGroup.find((v) => v.id === idLastVarGroup)
+    : selectedProject.variablesGroup[0];
 
-  function handleSelectVariablesGroup({ detail: { variablesGroup, project } }) {
+  function setProjectsToLocalStorage() {
+    localStorage.removeItem("projects");
+    localStorage.setItem("projects", JSON.stringify(projects));
+  }
+  function handleSelectVariableGroup({ detail: { variableGroup, project } }) {
     state = "IDLE";
     selectedProject = project;
-    selectedVariablesGroup = variablesGroup;
+    selectedVariablesGroup = variableGroup;
+    localStorage.setItem("lastIdOfProjectSelected", JSON.stringify(project.id));
+    localStorage.setItem(
+      "lastIdOfVariableGroupSelected",
+      JSON.stringify(variableGroup.id)
+    );
     setTimeout(() => (state = "SUCCESS"), 0);
   }
   function addNewProject({ detail: { newProjectName } }) {
     const newProjectObj = {
-      id: Math.floor(Math.random() * 10000),
+      id: getRandomId(),
       name: newProjectName,
       variablesGroup: [],
     };
     projects = [...projects, newProjectObj];
+    setProjectsToLocalStorage();
+  }
+  function getRandomId() {
+    return Math.floor(Math.random() * 10000000);
   }
   function addNewVariablesGroup({
     detail: { newVariableGroupName, projectId },
   }) {
     const newVariablesGroupObj = {
-      id: Math.floor(Math.random() * 10000),
+      id: getRandomId(),
       name: newVariableGroupName,
       variables: [],
     };
@@ -39,12 +63,13 @@
       }
       return p;
     });
+    setProjectsToLocalStorage();
   }
   function duplicateVariableGroup({ detail: { variableGroup, projectId } }) {
     const newVariablesGroupObj = {
       ...variableGroup,
       name: `${variableGroup.name} (copy)`,
-      id: Math.floor(Math.random() * 10000),
+      id: getRandomId(),
     };
     projects = projects.map((p) => {
       if (p.id === projectId) {
@@ -55,9 +80,11 @@
       }
       return p;
     });
+    setProjectsToLocalStorage();
   }
   function removeProjectByID({ detail: { id } }) {
     projects = projects.filter((p) => p.id !== id);
+    setProjectsToLocalStorage();
   }
   function removeVariableGroupByID({ detail: { id, projectId } }) {
     projects = projects.map((p) => {
@@ -69,6 +96,8 @@
       }
       return p;
     });
+
+    setProjectsToLocalStorage();
   }
   function saveProjectName({ detail: { projectId, projectNameEdited } }) {
     projects = projects.map((p) => {
@@ -80,6 +109,7 @@
       }
       return p;
     });
+    setProjectsToLocalStorage();
   }
   function saveVariableGroupName({
     detail: { projectId, variableGroupId, variableGroupNameEdited },
@@ -97,6 +127,7 @@
       }
       return p;
     });
+    setProjectsToLocalStorage();
   }
   function updateEnvVariables({
     detail: { projectId, variableGroupId, envVariablesUpdated },
@@ -114,13 +145,14 @@
       }
       return p;
     });
+    setProjectsToLocalStorage();
   }
 </script>
 
 <div class="container">
   <MainLayout
     {projects}
-    on:selectVariablesGroup={handleSelectVariablesGroup}
+    on:selectVariableGroup={handleSelectVariableGroup}
     on:addNewProject={addNewProject}
     on:addNewVariablesGroup={addNewVariablesGroup}
     on:removeProjectByID={removeProjectByID}

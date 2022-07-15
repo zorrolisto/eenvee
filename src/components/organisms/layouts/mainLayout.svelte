@@ -7,8 +7,8 @@
   let projectId = null;
   let newVariableGroupName = null;
 
-  function selectVariablesGroup(variablesGroup, project) {
-    dispatch("selectVariablesGroup", { variablesGroup, project });
+  function selectVariableGroup(variableGroup, project) {
+    dispatch("selectVariableGroup", { variableGroup, project });
   }
   function showProjectInput() {
     newProjectName = "";
@@ -74,7 +74,7 @@
             <ul>
               {#each project.variablesGroup as variableGroup}
                 <li
-                  on:click|stopPropagation={selectVariablesGroup(
+                  on:click|stopPropagation={selectVariableGroup(
                     variableGroup,
                     project
                   )}
