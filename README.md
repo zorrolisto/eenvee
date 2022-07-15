@@ -21,8 +21,9 @@ This project let us manage our env variables in a web-friendly way, all the vari
 * [X] Delete variables group for project
 * [X] Duplicate variables group
 * [X] Duplicate project
-* [ ] Edit name of variables group
-* [ ] Edit name of project
+* [X] Edit name of variables group
+* [X] Edit name of project
+* [ ] Bug Inputs doesn't update when change the group of variables
 * [ ] Add local storage functionality
 * [ ] better UI
 

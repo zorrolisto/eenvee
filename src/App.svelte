@@ -11,7 +11,6 @@
   function handleSelectVariablesGroup({ detail: { variablesGroup, project } }) {
     selectedProject = project;
     selectedVariablesGroup = variablesGroup;
-    alert(variablesGroup.name);
   }
   function addNewProject({ detail: { newProjectName } }) {
     const newProjectObj = {
