@@ -1,6 +1,6 @@
 # EENVEE (ENV variables manager)
 
-Like the Eevee pokemon change to a lot of forms with magic, our apps can change in tremendous amount of way for the magic of the **".env"** files.
+Like the Eevee pokemon change to a lot of forms with magic, our apps can change in tremendous amount of ways for the magic of the **".env"** files.
 
 <p align="center">
     <img src="https://gamingintel.com/wp-content/uploads/2022/04/Pokemon-GO-All-Eevee-Names-Guide-How-to-Get-Every-Evolution.jpg" alt="drawing" width="600"/>    
@@ -11,6 +11,7 @@ This project let us manage our env variables in a safe and quick way, all the va
 ## Stack
 
 - Svelte
+- Tailwind
 
 ## Dev
 
