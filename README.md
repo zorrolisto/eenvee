@@ -13,7 +13,7 @@ This project let us manage our env variables in a web-friendly way, all the vari
 * [ ] Add local storage functionality
 * [ ] Modal for add project
 * [ ] Modal for add variables group for project
-* [ ] Fix RESET button in "Show as Inputs"
+* [X] Fix RESET button in "Show as Inputs"
 * [ ] Decide What happen if in "Show as Text" change all the variables
 * [ ] Finish functionality of Show as Text
 * [ ] better UI
