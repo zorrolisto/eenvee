@@ -18,18 +18,26 @@
     const linesExtractedFromText = text
       .split(/\n/)
       .filter((t) => t.trim() !== "");
-    return linesExtractedFromText.map((t) => {
+    const envVariables = linesExtractedFromText.map((t) => {
       const [field, ...value] = t.split("=");
       return {
         field: field ? field.trim() : "",
         value: value || value.length ? value.join("=").trim() : "",
       };
     });
+    for (const envVar of envVariables) {
+      if (envVar.field === "" || /\s/.test(envVar.field)) {
+        alert("Can't have white spaces the field of the env variables");
+        return null;
+      }
+    }
+    return envVariables;
   }
+
   function handleSubmit() {
-    dispatch("updateEnvVariables", {
-      envVariablesUpdated: updateTextFromVariable(variablesAsText),
-    });
+    const envVariablesUpdated = updateTextFromVariable(variablesAsText);
+    if (!envVariablesUpdated) return;
+    dispatch("updateEnvVariables", { envVariablesUpdated });
   }
 </script>
 

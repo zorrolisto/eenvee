@@ -51,6 +51,16 @@
     });
     resetVariables();
   }
+  function copyTextFromVariables() {
+    copyToClipbard(
+      selectedVariablesGroup.variables
+        .map((v) => `${v.field} = ${v.value} \n`)
+        .reduce((a, b) => a + b)
+    );
+  }
+  function copyToClipbard(text) {
+    navigator.clipboard.writeText(text);
+  }
   function resetVariables() {
     projectNameEdited = null;
     variableGroupNameEdited = null;
@@ -92,6 +102,7 @@
     <button on:click={selectViewAsInputs}>Show As Inputs</button>
     <button on:click={selectViewAsText}>Show As Text</button>
   </div>
+  <button on:click={copyTextFromVariables}>Copy all</button>
 
   {#if state === "SUCCESS"}
     {#if selectedTypeOfView === "AsInputs"}

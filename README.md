@@ -40,8 +40,9 @@ This project let us manage our env variables in a safe and quick way, all the va
 - [x] Edit name of project
 - [x] Bug Inputs doesn't update when change the group of variables
 - [x] Add local storage functionality
-- [ ] better UI
-- [ ] Add "copy" buttons
+- [x] Add "copy" buttons
+- [x] Add validations for make fields of env variables
 - [ ] Add "import" buttons
+- [ ] better UI
 
 \*\*MIT License
