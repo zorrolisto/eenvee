@@ -1,6 +1,6 @@
 <script>
-  import MainLayout from "./components/organisms/layouts/mainLayout.svelte";
-  import Main from "./components/organisms/main/main.svelte";
+  import MainLayout from "./components/layouts/mainLayout.svelte";
+  import Main from "./components/main/main.svelte";
   import projectsDefault from "./mockups/projects.mockups";
 
   let projects =
@@ -149,7 +149,7 @@
   }
 </script>
 
-<div class="container">
+<div class="flex">
   <MainLayout
     {projects}
     on:selectVariableGroup={handleSelectVariableGroup}
@@ -170,7 +170,7 @@
 </div>
 
 <style>
-  .container {
+  .c-flex {
     display: flex;
   }
 </style>

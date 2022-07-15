@@ -43,6 +43,6 @@ This project let us manage our env variables in a safe and quick way, all the va
 - [x] Add "copy" buttons
 - [x] Add validations for make fields of env variables
 - [ ] Add "import" buttons
-- [ ] better UI
+- [x] better UI
 
 \*\*MIT License
