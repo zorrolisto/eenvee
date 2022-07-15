@@ -19,8 +19,10 @@ This project let us manage our env variables in a web-friendly way, all the vari
 * [X] Add variables group for project
 * [X] Delete project
 * [X] Delete variables group for project
-* [ ] Duplicate variables group
-* [ ] Duplicate project
+* [X] Duplicate variables group
+* [X] Duplicate project
+* [ ] Edit name of variables group
+* [ ] Edit name of project
 * [ ] Add local storage functionality
 * [ ] better UI
 

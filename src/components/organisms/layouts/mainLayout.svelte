@@ -31,6 +31,9 @@
     dispatch("addNewVariablesGroup", { newVariableGroupName, projectId });
     resetVariables();
   }
+  function duplicateVariableGroup(variableGroup, projectId) {
+    dispatch("duplicateVariableGroup", { variableGroup, projectId });
+  }
   function saveProject() {
     if (newProjectName.trim() === "") return resetVariables();
     dispatch("addNewProject", { newProjectName });
@@ -80,6 +83,12 @@
                   )}
                 >
                   {variableGroup.name}
+                  <button
+                    on:click|capture|stopPropagation={() =>
+                      duplicateVariableGroup(variableGroup, project.id)}
+                  >
+                    Duplicate
+                  </button>
                   <button
                     on:click|capture|stopPropagation={() =>
                       removeVariableGroupByID(variableGroup.id, project.id)}

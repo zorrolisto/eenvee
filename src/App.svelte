@@ -40,6 +40,21 @@
       return p;
     });
   }
+  function duplicateVariableGroup({ detail: { variableGroup, projectId } }) {
+    const newVariablesGroupObj = {
+      ...variableGroup,
+      id: Math.floor(Math.random() * 10000),
+    };
+    projects = projects.map((p) => {
+      if (p.id === projectId) {
+        return {
+          ...p,
+          variablesGroup: [...p.variablesGroup, newVariablesGroupObj],
+        };
+      }
+      return p;
+    });
+  }
   function removeProjectByID({ detail: { id } }) {
     projects = projects.filter((p) => p.id !== id);
   }
@@ -65,6 +80,7 @@
     on:addNewVariablesGroup={addNewVariablesGroup}
     on:removeProjectByID={removeProjectByID}
     on:removeVariableGroupByID={removeVariableGroupByID}
+    on:duplicateVariableGroup={duplicateVariableGroup}
   />
   <Main {selectedProject} {selectedVariablesGroup} />
 </div>
