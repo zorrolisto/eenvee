@@ -1,37 +1,47 @@
 # EENVEE (ENV variables manager)
-Like the Eevee pokemon, our apps change for the magic __".env file"__.  
+
+Like the Eevee pokemon change to a lot of forms with magic, our apps can change in tremendous amount of way for the magic of the **".env"** files.
+
 <p align="center">
-    <img src="https://static.wikia.nocookie.net/espokemon/images/f/f2/Eevee.png/revision/latest?cb=20150621181400" alt="drawing" width="200"/>    
+    <img src="https://gamingintel.com/wp-content/uploads/2022/04/Pokemon-GO-All-Eevee-Names-Guide-How-to-Get-Every-Evolution.jpg" alt="drawing" width="400"/>    
 </p>
-  
-This project let us manage our env variables in a web-friendly way, all the variables are save in LocalStorage of your browser __(nothing spooky is happening in the background you can check)__
+
+This project let us manage our env variables in a safe and quick way, all the variables are save in the LocalStorage to avoid send private data to any server.
 
 ## Stack
-* Svelte
 
-## TODO
-* [X] Fix RESET button in "Show as Inputs"
-* [X] Decide What happen if in "Show as Text" change all the variables
-* [X] Finish functionality of Show as Text
-* [X] Add and remove fields from "Show as Fields"
-* [X] Show feedback about save variables
-* [X] Add project
-* [X] Add variables group for project
-* [X] Delete project
-* [X] Delete variables group for project
-* [X] Duplicate variables group
-* [X] Duplicate project
-* [X] Edit name of variables group
-* [X] Edit name of project
-* [X] Bug Inputs doesn't update when change the group of variables
-* [X] Add local storage functionality
-* [ ] better UI
+- Svelte
 
 ## Dev
+
 1. Clone the repository
 1. cd ./eenvee
 1. npm install
 1. npm run dev
 
+## TODO
 
-**MIT License
+- [x] Init Svelte project
+- [x] Write README.md
+- [x] Launch to Vercel
+- [x] Init simple mockup functionality
+- [x] Fix RESET button in "Show as Inputs"
+- [x] Decide What happen if in "Show as Text" change all the variables
+- [x] Finish functionality of Show as Text
+- [x] Add and remove fields from "Show as Fields"
+- [x] Show feedback about save variables
+- [x] Add project
+- [x] Add variables group for project
+- [x] Delete project
+- [x] Delete variables group for project
+- [x] Duplicate variables group
+- [x] Duplicate project
+- [x] Edit name of variables group
+- [x] Edit name of project
+- [x] Bug Inputs doesn't update when change the group of variables
+- [x] Add local storage functionality
+- [ ] better UI
+- [ ] Add "copy" buttons
+- [ ] Add "import" buttons
+
+\*\*MIT License
