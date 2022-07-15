@@ -7,6 +7,7 @@
   copyByValueParam();
 
   function copyByValueParam() {
+    variablesAux = [];
     variables.forEach((i) => variablesAux.push({ ...i }));
   }
   function handleSubmit() {
