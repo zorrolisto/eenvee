@@ -41,6 +41,7 @@
   function duplicateVariableGroup({ detail: { variableGroup, projectId } }) {
     const newVariablesGroupObj = {
       ...variableGroup,
+      name: `${variableGroup.name} (copy)`,
       id: Math.floor(Math.random() * 10000),
     };
     projects = projects.map((p) => {
