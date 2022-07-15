@@ -4,13 +4,15 @@
   import projectsDefault from "./mockups/projects.mockups";
 
   let projects = projectsDefault;
-
+  let state = "SUCCESS";
   let selectedProject = projects[0];
   let selectedVariablesGroup = selectedProject.variablesGroup[0];
 
   function handleSelectVariablesGroup({ detail: { variablesGroup, project } }) {
+    state = "IDLE";
     selectedProject = project;
     selectedVariablesGroup = variablesGroup;
+    setTimeout(() => (state = "SUCCESS"), 0);
   }
   function addNewProject({ detail: { newProjectName } }) {
     const newProjectObj = {
@@ -128,6 +130,7 @@
   <Main
     {selectedProject}
     {selectedVariablesGroup}
+    {state}
     on:saveVariableGroupName={saveVariableGroupName}
     on:saveProjectName={saveProjectName}
     on:updateEnvVariables={updateEnvVariables}

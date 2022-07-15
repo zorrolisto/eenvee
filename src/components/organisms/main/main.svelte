@@ -5,6 +5,7 @@
 
   export let selectedProject;
   export let selectedVariablesGroup;
+  export let state;
   const dispatch = createEventDispatcher();
   let selectedTypeOfView = "AsInputs";
   let projectNameEdited = null;
@@ -92,18 +93,20 @@
     <button on:click={selectViewAsText}>Show As Text</button>
   </div>
 
-  {#if selectedTypeOfView === "AsInputs"}
-    <div>As Inputs</div>
-    <InputsGroup
-      variables={selectedVariablesGroup.variables}
-      on:updateEnvVariables={updateEnvVariables}
-    />
-  {:else}
-    <div>As Texts</div>
-    <TextEditor
-      variables={selectedVariablesGroup.variables}
-      on:updateEnvVariables={updateEnvVariables}
-    />
+  {#if state === "SUCCESS"}
+    {#if selectedTypeOfView === "AsInputs"}
+      <div>As Inputs</div>
+      <InputsGroup
+        variables={selectedVariablesGroup.variables}
+        on:updateEnvVariables={updateEnvVariables}
+      />
+    {:else}
+      <div>As Texts</div>
+      <TextEditor
+        variables={selectedVariablesGroup.variables}
+        on:updateEnvVariables={updateEnvVariables}
+      />
+    {/if}
   {/if}
 </div>
 

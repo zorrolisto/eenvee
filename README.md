@@ -23,7 +23,7 @@ This project let us manage our env variables in a web-friendly way, all the vari
 * [X] Duplicate project
 * [X] Edit name of variables group
 * [X] Edit name of project
-* [ ] Bug Inputs doesn't update when change the group of variables
+* [X] Bug Inputs doesn't update when change the group of variables
 * [ ] Add local storage functionality
 * [ ] better UI
 
