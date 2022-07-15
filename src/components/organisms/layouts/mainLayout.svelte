@@ -1,8 +1,7 @@
 <script>
-  export let projects;
-
   import { createEventDispatcher } from "svelte";
 
+  export let projects;
   const dispatch = createEventDispatcher();
 
   function selectProject(project) {
