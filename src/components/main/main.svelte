@@ -100,6 +100,7 @@
     </div>
   {:else}
     <input
+      class="text-2xl border-indigo-700 text-bold my-2 p-1"
       autofocus
       type="text"
       bind:value={variableGroupNameEdited}

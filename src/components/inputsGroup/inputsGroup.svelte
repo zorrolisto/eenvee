@@ -34,8 +34,8 @@
   }
 </script>
 
-<form on:submit|preventDefault={handleSubmit}>
-  {#if variablesAux.length}
+{#if variablesAux.length}
+  <form on:submit|preventDefault={handleSubmit}>
     <div
       class="flex flex-wrap py-5"
       style="max-height: 52.5vh; overflow: auto; min-width: 50vw"
@@ -75,28 +75,30 @@
         </div>
       {/each}
     </div>
-  {/if}
-  <p class="text-center mb-2 py-5">Aún no tienes env variables, agrega algunas.</p>
-  <div class="flex justify-center gap-2 pt-2">
-    <button
-      class="text-lg py-1 px-3 font-semibold rounded-md hover:bg-gray-100 border-2 "
-      type="button"
-      on:click={copyByValueParam}>Reset</button
-    >
-    <button
-      class="text-lg py-1 px-6 text-white font-semibold rounded-md bg-indigo-700 hover:bg-indigo-800 border-2 border-indigo-700"
-      type="submit"
-    >
-      Save
-    </button>
-  </div>
-</form>
+    <div class="flex justify-center gap-2 pt-2">
+      <button
+        class="text-lg py-1 px-3 font-semibold rounded-md hover:bg-gray-100 border-2 "
+        type="button"
+        on:click={copyByValueParam}>Reset</button
+      >
+      <button
+        class="text-lg py-1 px-6 text-white font-semibold rounded-md bg-indigo-700 hover:bg-indigo-800 border-2 border-indigo-700"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+{/if}
+<p class="text-center mb-2 py-5">
+  Aún no tienes env variables, agrega algunas.
+</p>
 <form
   on:submit|preventDefault={addNewField}
   class="w-full"
   style="max-width: 1072px"
 >
-  <div class="flex justify-center py-5">
+  <div class="flex justify-center">
     <div class="w-full mb-2 p-2">
       <label
         class="block text-gray-700 text-sm font-bold mb-2"
