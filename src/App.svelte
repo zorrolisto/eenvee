@@ -8,10 +8,9 @@
   let selectedProject = projects[0];
   let selectedVariablesGroup = selectedProject.variablesGroup[0];
 
-  function handleSelectProject({ detail: { project } }) {
-    alert(project.name);
-  }
-  function handleSelectVariablesGroup({ detail: { variablesGroup } }) {
+  function handleSelectVariablesGroup({ detail: { variablesGroup, project } }) {
+    selectedProject = project;
+    selectedVariablesGroup = variablesGroup;
     alert(variablesGroup.name);
   }
   function addNewProject({ detail: { newProjectName } }) {
@@ -119,7 +118,6 @@
 <div class="container">
   <MainLayout
     {projects}
-    on:selectProject={handleSelectProject}
     on:selectVariablesGroup={handleSelectVariablesGroup}
     on:addNewProject={addNewProject}
     on:addNewVariablesGroup={addNewVariablesGroup}

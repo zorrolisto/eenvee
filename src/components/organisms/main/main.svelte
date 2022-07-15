@@ -34,6 +34,7 @@
     if (e.which === 13) saveVariableGroupName();
   }
   function saveVariableGroupName() {
+    selectedVariablesGroup.name = variableGroupNameEdited;
     dispatch("saveVariableGroupName", {
       projectId: selectedProject.id,
       variableGroupId: selectedVariablesGroup.id,
@@ -42,6 +43,7 @@
     resetVariables();
   }
   function saveProjectName() {
+    selectedProject.name = projectNameEdited;
     dispatch("saveProjectName", {
       projectId: selectedProject.id,
       projectNameEdited,

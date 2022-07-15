@@ -7,9 +7,6 @@
   let projectId = null;
   let newVariableGroupName = null;
 
-  function selectProject(project) {
-    dispatch("selectProject", { project });
-  }
   function selectVariablesGroup(variablesGroup, project) {
     dispatch("selectVariablesGroup", { variablesGroup, project });
   }
@@ -60,7 +57,7 @@
       <button on:click|capture={showProjectInput}>Add</button>
       <ul>
         {#each projects as project}
-          <li on:click|stopPropagation={selectProject(project)}>
+          <li>
             {project.name}
             <button
               on:click|capture|stopPropagation={() =>
