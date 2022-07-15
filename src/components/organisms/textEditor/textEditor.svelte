@@ -34,7 +34,7 @@
 </script>
 
 <form on:submit|preventDefault={handleSubmit}>
-  <textarea bind:value={variablesAsText} />
+  <textarea bind:value={variablesAsText} cols="50" rows="10" />
   <button type="button" on:click={transformVariablesToText}>Reset</button>
   <button type="submit">Save</button>
 </form>
