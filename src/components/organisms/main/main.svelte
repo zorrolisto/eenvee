@@ -4,10 +4,13 @@
 
   export let selectedProject;
   export let selectedVariablesGroup;
-
   let selectedTypeOfView = "AsInputs";
+
   const selectViewAsInputs = () => (selectedTypeOfView = "AsInputs");
   const selectViewAsText = () => (selectedTypeOfView = "AsText");
+  function updateEnvVariables({ detail: { envVariablesUpdated } }) {
+    selectedVariablesGroup.variables = envVariablesUpdated;
+  }
 </script>
 
 <div class="main">
@@ -20,10 +23,16 @@
 
   {#if selectedTypeOfView === "AsInputs"}
     <div>As Inputs</div>
-    <InputsGroup />
+    <InputsGroup
+      variables={selectedVariablesGroup.variables}
+      on:updateEnvVariables={updateEnvVariables}
+    />
   {:else}
-    <div>As texts</div>
-    <TextEditor />
+    <div>As Texts</div>
+    <TextEditor
+      variables={selectedVariablesGroup.variables}
+      on:updateEnvVariables={updateEnvVariables}
+    />
   {/if}
 </div>
 
