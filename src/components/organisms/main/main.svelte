@@ -40,6 +40,6 @@
 <style>
   .main {
     min-height: 100vh;
-    width: calc(100vw - 300px);
+    width: calc(100vw - 500px);
   }
 </style>

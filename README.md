@@ -15,8 +15,10 @@ This project let us manage our env variables in a web-friendly way, all the vari
 * [X] Finish functionality of Show as Text
 * [X] Add and remove fields from "Show as Fields"
 * [X] Show feedback about save variables
-* [ ] Modal for add project
-* [ ] Modal for add variables group for project
+* [X] Add project
+* [X] Add variables group for project
+* [X] Delete project
+* [X] Delete variables group for project
 * [ ] Duplicate variables group
 * [ ] Duplicate project
 * [ ] Add local storage functionality

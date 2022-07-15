@@ -1,8 +1,10 @@
 const projectsDefault = [
   {
+    id: 1,
     name: "Portal Project",
     variablesGroup: [
       {
+        id: 1,
         name: "Owl Solutions variables",
         variables: [
           { field: "BD_URL", value: "db:3665?password=123&user=admin" },
@@ -11,6 +13,7 @@ const projectsDefault = [
         ],
       },
       {
+        id: 2,
         name: "Mercado variables",
         variables: [
           { field: "BD_URL", value: "db:3665?password=123&user=admin&MERCADO" },
@@ -21,9 +24,11 @@ const projectsDefault = [
     ],
   },
   {
+    id: 2,
     name: "Admin Console Project",
     variablesGroup: [
       {
+        id: 3,
         name: "Owl Solutions variables",
         variables: [
           { field: "BD_URL", value: "db:3665?password=123&user=admin" },
