@@ -10,6 +10,7 @@
   const selectViewAsText = () => (selectedTypeOfView = "AsText");
   function updateEnvVariables({ detail: { envVariablesUpdated } }) {
     selectedVariablesGroup.variables = envVariablesUpdated;
+    alert('New Env Variables saved')
   }
 </script>
 

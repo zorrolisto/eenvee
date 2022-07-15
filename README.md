@@ -10,14 +10,16 @@ This project let us manage our env variables in a web-friendly way, all the vari
 * Svelte
 
 ## TODO
-* [ ] Add local storage functionality
+* [X] Fix RESET button in "Show as Inputs"
+* [X] Decide What happen if in "Show as Text" change all the variables
+* [X] Finish functionality of Show as Text
+* [X] Add and remove fields from "Show as Fields"
+* [X] Show feedback about save variables
 * [ ] Modal for add project
 * [ ] Modal for add variables group for project
-* [X] Fix RESET button in "Show as Inputs"
-* [ ] Decide What happen if in "Show as Text" change all the variables
-* [ ] Finish functionality of Show as Text
 * [ ] Duplicate variables group
 * [ ] Duplicate project
+* [ ] Add local storage functionality
 * [ ] better UI
 
 ## Dev
