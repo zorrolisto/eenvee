@@ -69,6 +69,51 @@
       return p;
     });
   }
+  function saveProjectName({ detail: { projectId, projectNameEdited } }) {
+    projects = projects.map((p) => {
+      if (p.id === projectId) {
+        return {
+          ...p,
+          name: projectNameEdited,
+        };
+      }
+      return p;
+    });
+  }
+  function saveVariableGroupName({
+    detail: { projectId, variableGroupId, variableGroupNameEdited },
+  }) {
+    projects = projects.map((p) => {
+      if (p.id === projectId) {
+        return {
+          ...p,
+          variablesGroup: p.variablesGroup.map((v) =>
+            v.id === variableGroupId
+              ? { ...v, name: variableGroupNameEdited }
+              : v
+          ),
+        };
+      }
+      return p;
+    });
+  }
+  function updateEnvVariables({
+    detail: { projectId, variableGroupId, envVariablesUpdated },
+  }) {
+    projects = projects.map((p) => {
+      if (p.id === projectId) {
+        return {
+          ...p,
+          variablesGroup: p.variablesGroup.map((v) =>
+            v.id === variableGroupId
+              ? { ...v, variables: envVariablesUpdated }
+              : v
+          ),
+        };
+      }
+      return p;
+    });
+  }
 </script>
 
 <div class="container">
@@ -82,7 +127,13 @@
     on:removeVariableGroupByID={removeVariableGroupByID}
     on:duplicateVariableGroup={duplicateVariableGroup}
   />
-  <Main {selectedProject} {selectedVariablesGroup} />
+  <Main
+    {selectedProject}
+    {selectedVariablesGroup}
+    on:saveVariableGroupName={saveVariableGroupName}
+    on:saveProjectName={saveProjectName}
+    on:updateEnvVariables={updateEnvVariables}
+  />
 </div>
 
 <style>
