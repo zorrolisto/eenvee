@@ -16,6 +16,8 @@ This project let us manage our env variables in a web-friendly way, all the vari
 * [X] Fix RESET button in "Show as Inputs"
 * [ ] Decide What happen if in "Show as Text" change all the variables
 * [ ] Finish functionality of Show as Text
+* [ ] Duplicate variables group
+* [ ] Duplicate project
 * [ ] better UI
 
 ## Dev
