@@ -10,13 +10,14 @@
     localStorage.getItem("lastIdOfProjectSelected")
   );
   let selectedProject = idLastProj
-    ? projects.find((p) => p.id === idLastProj)
+    ? projects.find((p) => p.id === idLastProj) || projects[0]
     : projects[0];
   const idLastVarGroup = JSON.parse(
     localStorage.getItem("lastIdOfVariableGroupSelected")
   );
   let selectedVariablesGroup = idLastVarGroup
-    ? selectedProject.variablesGroup.find((v) => v.id === idLastVarGroup)
+    ? selectedProject.variablesGroup.find((v) => v.id === idLastVarGroup) ||
+      selectedProject.variablesGroup[0]
     : selectedProject.variablesGroup[0];
 
   function setProjectsToLocalStorage() {
@@ -168,9 +169,3 @@
     on:updateEnvVariables={updateEnvVariables}
   />
 </div>
-
-<style>
-  .c-flex {
-    display: flex;
-  }
-</style>
