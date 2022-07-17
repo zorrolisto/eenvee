@@ -90,9 +90,11 @@
     </div>
   </form>
 {/if}
-<p class="text-center mb-2 py-5">
-  Aún no tienes env variables, agrega algunas.
-</p>
+{#if !variables || variables.length === 0}
+  <p class="text-center mb-2 py-5">
+    You don't have env variables in this group yet
+  </p>
+{/if}
 <form
   on:submit|preventDefault={addNewField}
   class="w-full"
