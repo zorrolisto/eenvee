@@ -117,6 +117,7 @@
                   <input
                     autofocus
                     type="text"
+                    class="shadow appearance-none border text-lg rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     bind:value={newVariableGroupName}
                     on:keypress={verifyKeyForVar}
                     on:blur={saveVariableGroup}
@@ -131,6 +132,7 @@
             <input
               autofocus
               type="text"
+              class="shadow appearance-none border text-lg rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               bind:value={newProjectName}
               on:keypress={verifyKeyForProj}
               on:blur={saveProject}

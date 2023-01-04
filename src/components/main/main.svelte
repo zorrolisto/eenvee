@@ -159,5 +159,8 @@
   .main {
     min-height: 100vh;
     width: calc(100vw - 350px);
+    position: fixed;
+    top: 0px !important;
+    right: 0px !important;
   }
 </style>
