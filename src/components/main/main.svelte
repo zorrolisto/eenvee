@@ -80,7 +80,9 @@
 <div class="main p-5 flex flex-col items-center space-y-3">
   {#if projectNameEdited === null}
     <div class="flex space-x-2 items-center">
-      <h3 class="text-3xl font-bold">{selectedProject.name}</h3>
+      <h3 class="text-3xl font-bold" style="word-break: break-all">
+        {selectedProject.name}
+      </h3>
       <button
         class="rounded px-2 py-1 hover:text-indigo-700 border-2 hover:border-indigo-700"
         on:click={showEditInputForProjectName}
@@ -100,7 +102,9 @@
   {/if}
   {#if variableGroupNameEdited === null}
     <div class="flex space-x-2 items-center">
-      <h4 class="text-2xl font-semibold">{selectedVariablesGroup.name}</h4>
+      <h4 class="text-2xl font-semibold" style="word-break: break-all">
+        {selectedVariablesGroup.name}
+      </h4>
       <button
         class="rounded px-2 py-1 hover:text-indigo-700 border-2 hover:border-indigo-700"
         on:click={showEditInputForVariableGroupName}

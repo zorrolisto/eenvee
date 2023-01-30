@@ -68,7 +68,7 @@
         {#each projects as project}
           <li class="text-lg my-2 py-2 rounded-lg border-2 border-indigo-800">
             <div class="flex space-x-2">
-              <p class="rounded cursor-default p-2 ml-2">
+              <p class="rounded cursor-default p-2 ml-2" style="word-break: break-all">
                 {project.name}
               </p>
               <button
@@ -95,7 +95,7 @@
                     project
                   )}
                 >
-                  <p class="rounded cursor-pointer p-2 hover:bg-indigo-800">
+                  <p class="rounded cursor-pointer p-2 hover:bg-indigo-800" style="word-break: break-all">
                     {variableGroup.name}
                   </p>
                   <button
