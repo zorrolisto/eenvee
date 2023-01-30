@@ -7,7 +7,7 @@
   export let selectedVariablesGroup;
   export let state;
   const dispatch = createEventDispatcher();
-  let selectedTypeOfView = "AsInputs";
+  let selectedTypeOfView = "AsText";
   let projectNameEdited = null;
   let variableGroupNameEdited = null;
 
@@ -35,6 +35,10 @@
     if (e.which === 13) saveVariableGroupName();
   }
   function saveVariableGroupName() {
+    if (!variableGroupNameEdited || variableGroupNameEdited.trim() === "") {
+      resetVariables();
+      return;
+    }
     selectedVariablesGroup.name = variableGroupNameEdited;
     dispatch("saveVariableGroupName", {
       projectId: selectedProject.id,
@@ -44,6 +48,10 @@
     resetVariables();
   }
   function saveProjectName() {
+    if (!projectNameEdited || projectNameEdited.trim() === "") {
+      resetVariables();
+      return;
+    }
     selectedProject.name = projectNameEdited;
     dispatch("saveProjectName", {
       projectId: selectedProject.id,
@@ -52,6 +60,7 @@
     resetVariables();
   }
   function copyTextFromVariables() {
+    alert("Variables copied!!");
     copyToClipbard(
       selectedVariablesGroup.variables
         .map((v) => `${v.field} = ${v.value} \n`)
@@ -60,6 +69,7 @@
   }
   function copyToClipbard(text) {
     navigator.clipboard.writeText(text);
+    window.navigator.clipboard.writeText(text);
   }
   function resetVariables() {
     projectNameEdited = null;
@@ -80,7 +90,7 @@
     </div>
   {:else}
     <input
-      class="text-3xl border-indigo-700 text-bold my-2 p-1"
+      class="text-3xl border-indigo-700 border-2 rounded text-bold my-2 p-1"
       autofocus
       type="text"
       bind:value={projectNameEdited}
@@ -100,7 +110,7 @@
     </div>
   {:else}
     <input
-      class="text-2xl border-indigo-700 text-bold my-2 p-1"
+      class="text-2xl border-indigo-700 border-2 rounded text-bold my-2 p-1"
       autofocus
       type="text"
       bind:value={variableGroupNameEdited}
