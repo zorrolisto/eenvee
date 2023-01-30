@@ -24,7 +24,8 @@
     if (e.which === 13) saveVariableGroup();
   }
   function saveVariableGroup() {
-    if (newVariableGroupName.trim() === "") return resetVariables();
+    if (!newVariableGroupName || newVariableGroupName.trim() === "")
+      return resetVariables();
     dispatch("addNewVariablesGroup", { newVariableGroupName, projectId });
     resetVariables();
   }
@@ -32,7 +33,8 @@
     dispatch("duplicateVariableGroup", { variableGroup, projectId });
   }
   function saveProject() {
-    if (newProjectName.trim() === "") return resetVariables();
+    if (!newProjectName || newProjectName.trim() === "")
+      return resetVariables();
     dispatch("addNewProject", { newProjectName });
     resetVariables();
   }
